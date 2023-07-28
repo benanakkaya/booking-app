@@ -5,6 +5,7 @@ import Vacation from '../components/VacationLocations/Vacation'
 import BlogPosts from '../components/BlogPosts/BlogPosts'
 import PopularHotels from '../components/PopularHotels/PopularHotels'
 import MobileApp from '../components/MobileApp/MobileApp'
+import Explore from '../components/Explore/Explore'
 
 const Home = () => {
   return (
@@ -15,7 +16,7 @@ const Home = () => {
       <BlogPosts />
       <PopularHotels />
       <MobileApp />
-      <div>asdas</div>
+      <Explore />
     </div>
   )
 }

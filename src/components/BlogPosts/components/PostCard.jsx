@@ -2,7 +2,7 @@ import React from "react";
 
 const PostCard = ({ post }) => {
   return (
-    <div className="flex flex-col justify-end cursor-pointer group">
+    <div className="flex flex-col justify-end cursor-pointer group hover:-translate-y-3 duration-500">
       <div className="relative">
         <img className="w-full h-[300px] absolute group-hover:opacity-90 transition-all duration-500" src={post.image} />
       </div>

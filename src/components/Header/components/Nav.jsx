@@ -32,9 +32,9 @@ const Nav = () => {
 
   return (
     <nav>
-      <ul className="flex items-center gap-[48px]">
+      <ul className="hidden xl:flex items-center gap-[48px]">
         {navItems.map((item) => (
-          <li>
+          <li key={item.id}>
             <a href={item.path} className="text-lg hover:text-primary">
               {item.name}
             </a>

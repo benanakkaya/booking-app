@@ -4,14 +4,17 @@ import imgHotel1 from "../../assets/hotel1.png";
 import imgHotel2 from "../../assets/hotel2.png";
 import imgHotel3 from "../../assets/hotel3.png";
 import imgHotel4 from "../../assets/hotel4.png";
-
+import {motion, useScroll } from "framer-motion"
+import { containerVariant, itemVariant } from '../../App';
 const PopularHotels = () => {
+
+  const { scrollYProgress } = useScroll();
 
     const locations = [
         {
           id: 1,
           name: "Lakeside Motel Warefront",
-          location: "Turkey",
+          location: "USA",
           image: imgHotel1,
         },
         {
@@ -39,11 +42,16 @@ const PopularHotels = () => {
       <div className="flex flex-col gap-[15px]">
         <h2 className="font-bold text-[28px]">Popular hotels</h2>
       </div>
-      <div className="grid grid-cols-4 gap-[20px]">
+      <motion.div initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: true, amount: 0.8 }}
+       variants={containerVariant} className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-[30px]  gap-[20px]">
         {locations.map(location => (
+          <motion.div  key={location.id} variants={itemVariant}>
             <LocationCard location={location} />
+            </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   )
 }

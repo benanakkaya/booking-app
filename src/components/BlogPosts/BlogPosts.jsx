@@ -1,8 +1,10 @@
 import React from 'react';
+import { containerVariant, itemVariant } from '../../App';
 import imgPost1 from "../../assets/post1.png";
 import imgPost2 from "../../assets/post2.png";
 import imgPost3 from "../../assets/post3.png";
 import PostCard from './components/PostCard';
+import {motion} from "framer-motion"
 
 const BlogPosts = () => {
 
@@ -28,16 +30,21 @@ const BlogPosts = () => {
     ]
 
   return (
-    <div className="container flex flex-col gap-[30px]">
+    <motion.div initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: true, amount: 0.8 }}
+      variants={containerVariant} className="container flex flex-col gap-[30px]">
       <div className="flex flex-col gap-[15px]">
         <h2 className="font-bold text-[28px]">Get inspiration for your next trip</h2>
       </div>
-      <div className="grid grid-cols-3 gap-[20px]">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-[30px] ">
         {posts.map(post => (
-            <PostCard post={post} />
+          <motion.div key={post.id} variants={itemVariant}>
+            <PostCard  post={post} />
+            </motion.div>
         ))}
       </div>
-    </div>
+    </motion.div>
   )
 }
 

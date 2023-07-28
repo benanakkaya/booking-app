@@ -2,7 +2,7 @@ import React from 'react'
 
 const LocationCard = ({location}) => {
   return (
-    <div className='flex flex-col gap-[15px] group cursor-pointer'>
+    <div className='flex flex-col gap-[15px] group cursor-pointer hover:-translate-y-3 duration-500'>
         <img className='group-hover:opacity-90 transition-all duration-500' src={location.image} />
         <div className='flex flex-col gap-[6px]'>
             <h4 className='text-xl font-bold'>{location.name}</h4>

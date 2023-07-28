@@ -4,6 +4,8 @@ import Japan from "../../assets/japan.png";
 import NewZealand from "../../assets/new-zealand.png";
 import Greece from "../../assets/greece.png";
 import LocationCard from "./components/LocationCard";
+import { containerVariant, itemVariant } from "../../App";
+import { motion } from "framer-motion";
 
 const Vacation = () => {
   const locations = [
@@ -42,11 +44,18 @@ const Vacation = () => {
           destination information and <br /> inspiration from us
         </p>
       </div>
-      <div className="grid grid-cols-4 gap-[20px]">
-        {locations.map(location => (
+      <motion.div initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: true, amount: 0.8 }}
+        variants={containerVariant}
+        className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-[30px] xl:gap-[20px]"
+      >
+        {locations.map((location) => (
+          <motion.div key={location.id}  variants={itemVariant}>
             <LocationCard location={location} />
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 };
