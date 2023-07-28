@@ -1,8 +1,10 @@
 import React from "react";
+import { itemVariant } from "../../../App";
+import {motion} from "framer-motion"
 
 const PostCard = ({ post }) => {
   return (
-    <div className="flex flex-col justify-end cursor-pointer group hover:-translate-y-3 duration-500">
+    <motion.div variants={itemVariant} className="flex flex-col justify-end cursor-pointer group">
       <div className="relative">
         <img className="w-full h-[300px] absolute group-hover:opacity-90 transition-all duration-500" src={post.image} />
       </div>
@@ -10,7 +12,7 @@ const PostCard = ({ post }) => {
         <h4 className="font-bold text-xl">{post.title}</h4>
         <h5 className="leading-[140%] text-grey-200">{post.subtitle}</h5>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

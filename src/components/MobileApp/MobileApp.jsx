@@ -5,7 +5,7 @@ import {motion} from "framer-motion"
 
 const MobileApp = () => {
   return (
-    <motion.div initial="offscreen" className='container'
+    <motion.div initial="offscreen" className='container '
       whileInView="onscreen"
       viewport={{ once: true, amount: 0.8 }}
       variants={containerVariant} >

@@ -30,21 +30,19 @@ const BlogPosts = () => {
     ]
 
   return (
-    <motion.div initial="offscreen"
-      whileInView="onscreen"
-      viewport={{ once: true, amount: 0.8 }}
-      variants={containerVariant} className="container flex flex-col gap-[30px]">
+    <div className="container flex flex-col gap-[30px] xl:gap-[20px]">
       <div className="flex flex-col gap-[15px]">
         <h2 className="font-bold text-[28px]">Get inspiration for your next trip</h2>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-[30px] ">
+      <motion.div initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: true, amount: 0.8 }}
+      variants={containerVariant} className="grid grid-cols-1 lg:grid-cols-3 gap-[30px] xl:gap-[20px]  ">
         {posts.map(post => (
-          <motion.div key={post.id} variants={itemVariant}>
-            <PostCard  post={post} />
-            </motion.div>
+            <PostCard key={post.id}  post={post} />
         ))}
-      </div>
-    </motion.div>
+      </motion.div>
+    </div>
   )
 }
 

@@ -45,11 +45,9 @@ const PopularHotels = () => {
       <motion.div initial="offscreen"
       whileInView="onscreen"
       viewport={{ once: true, amount: 0.8 }}
-       variants={containerVariant} className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-[30px]  gap-[20px]">
+       variants={containerVariant} className="grid grid-cols-2 xl:grid-cols-4 gap-[30px] xl:gap-[20px]  ">
         {locations.map(location => (
-          <motion.div  key={location.id} variants={itemVariant}>
-            <LocationCard location={location} />
-            </motion.div>
+            <LocationCard key={location.id} location={location} />
         ))}
       </motion.div>
     </div>
