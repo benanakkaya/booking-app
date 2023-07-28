@@ -37,7 +37,7 @@ const Hero = () => {
         </motion.div>
       </div>
       <motion.div initial={{opacity:0}} animate={{opacity:1}} className='relative w-full flex items-center justify-center'>
-        <form className='absolute  px-[12px] py-[10px] bg-white w-[90%] rounded-md  flex flex-col xl:flex-row items-center gap-[12px] shadow-lg'>
+        <form className='absolute  px-[12px] py-[10px] bg-white w-[90%] xl:w-auto rounded-md  flex flex-col xl:flex-row items-center gap-[12px] shadow-lg'>
         <label className='flex w-full xl:w-[230px] items-center gap-[10px] bg-grey p-[12px] rounded-md text-grey-900  border-[1px] focus-within:border-primary'>
             <FaMapMarkerAlt />
             <input type="text" placeholder='Where are you going?' className='bg-transparent outline-none placeholder:text-grey-900' />
